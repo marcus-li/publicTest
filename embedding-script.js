@@ -2,7 +2,7 @@
 
 // Create a function to load the React app bundle
 function loadReactApp() {
-  const reactAppURL = 'https://your-cdn.com/path-to/your-react-app.js';
+  const reactAppURL = 'https://raw.githubusercontent.com/marcus-li/publicTest/main/chatbot.js';
  
   document.body.appendChild( document.createElement('root');)
   const script = document.createElement('script');

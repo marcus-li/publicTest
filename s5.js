@@ -1,9 +1,24 @@
+ // Customize the script as needed for embedding
+    const rootContainer = document.getElementById('root');
+    if (!rootContainer) {
+
+      console.log("creating root");
+      // If the 'root' element doesn't exist, create it and add it to the body
+      const newRootContainer = document.createElement('div');
+      newRootContainer.id = 'root';
+      document.body.appendChild(newRootContainer);
+    }
+
 // Create a function to load the React app bundle
 function loadReactApp() {
   const reactAppURL = 'https://marcus-li.github.io/publicTest/chatbot.js';
-
+  
   console.log('Loading React app from:', reactAppURL);
-
+  if(!document.getElementById('root')){
+    console.log("root not yet loaded");
+  }else{
+    console.log('root loaded');
+  }
   // Create a script element to load the React app bundle
   const script = document.createElement('script');
   script.src = reactAppURL;
@@ -31,14 +46,7 @@ function loadReactApp() {
 // Load the React app when the page is ready
 if (document.readyState === 'complete' || (document.readyState !== 'loading' && !document.documentElement.doScroll)) {
   // If the page is already loaded or interactive, load the React app immediately
-   // Customize the script as needed for embedding
-    const rootContainer = document.getElementById('root');
-    if (!rootContainer) {
-      // If the 'root' element doesn't exist, create it and add it to the body
-      const newRootContainer = document.createElement('div');
-      newRootContainer.id = 'root';
-      document.body.appendChild(newRootContainer);
-    }
+  
   loadReactApp();
 } else {
   // If the page is still loading, wait for the 'DOMContentLoaded' event before loading the React app

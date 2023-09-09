@@ -1,9 +1,8 @@
 
 // Create a function to load the React app bundle
 function loadReactApp() {
-  const reactAppURL = 'https://marcus-li.github.io/publicTest/embedding-script.js';
+  const reactAppURL = 'https://marcus-li.github.io/publicTest/chatbot.js';
  
-  document.body.appendChild( document.createElement('root');)
   const script = document.createElement('script');
   script.src = reactAppURL;
   script.type = 'module'; // Adjust this if needed (e.g., 'text/javascript')

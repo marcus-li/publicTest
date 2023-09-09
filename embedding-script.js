@@ -1,4 +1,3 @@
-<script type="module">
 
 // Create a function to load the React app bundle
 function loadReactApp() {
@@ -34,4 +33,3 @@ if (document.readyState === 'complete' || (document.readyState !== 'loading' && 
 } else {
   document.addEventListener('DOMContentLoaded', loadReactApp);
 }
-</script>

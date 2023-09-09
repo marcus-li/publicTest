@@ -13,22 +13,6 @@ function loadReactApp() {
   // Set up an event handler for when the script is loaded successfully
   script.onload = () => {
     console.log('React app script has loaded successfully.');
-
-    // Customize the script as needed for embedding
-    const rootContainer = document.getElementById('root');
-    if (!rootContainer) {
-      // If the 'root' element doesn't exist, create it and add it to the body
-      const newRootContainer = document.createElement('div');
-      newRootContainer.id = 'root';
-      document.body.appendChild(newRootContainer);
-    }
-
-    // Example: Inject the React app into a specific div with an ID
-    const container = document.getElementById('embedding-container');
-    // Uncomment and customize this part based on your React app's setup
-    // if (container && typeof ReactApp !== 'undefined') {
-    //   ReactApp.render({}, container);
-    // }
   };
 
   // Set up an event handler for when the script fails to load
@@ -47,6 +31,14 @@ function loadReactApp() {
 // Load the React app when the page is ready
 if (document.readyState === 'complete' || (document.readyState !== 'loading' && !document.documentElement.doScroll)) {
   // If the page is already loaded or interactive, load the React app immediately
+   // Customize the script as needed for embedding
+    const rootContainer = document.getElementById('root');
+    if (!rootContainer) {
+      // If the 'root' element doesn't exist, create it and add it to the body
+      const newRootContainer = document.createElement('div');
+      newRootContainer.id = 'root';
+      document.body.appendChild(newRootContainer);
+    }
   loadReactApp();
 } else {
   // If the page is still loading, wait for the 'DOMContentLoaded' event before loading the React app
